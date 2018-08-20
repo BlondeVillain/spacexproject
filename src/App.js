@@ -7,40 +7,78 @@ class App extends Component {
   constructor(){
     super();
     this.state = {
-
-    roadsterspecs_speed_mph: 0,
-    roadsterspecs_distancefromearth_mi: 0,
-    roadsterspecs_distancefrommars_mi: 0,
-
-  
-    }    
+    helloworld: "Hello World",
+    roadsterspecs_speed_mph: [],
+    rocketspec1: {},
+    rocketspec2: {},
+    // rocketspec3: {},
+    // rocketspec4: {},
+    // rocketspec5: {}
+    }
   }
-
+  
+// >>>TEST OUTPUT
   componentDidMount() {
     axios
-    .get('https://api.spacexdata.com/v2/info/roadster')
-    axios
-    .get('https://api.spacexdata.com/v2/rockets/falconheavy').then(response => {console.log(response)});
-    axios
-    .get('https://api.spacexdata.com/v2/rockets/falcon1').then(response => {console.log(response)});
-    axios
-    .get('https://api.spacexdata.com/v2/rockets/falcon9').then(response => {console.log(response)});
-    axios
-    .get('https://api.spacexdata.com/v2/rockets/bfr').then(response => {console.log(response)});
+    .get('/v2/info/roadster').then(response =>{this.setState({rocketspec1: response.data}, console.log(response.data))})
+    .catch(err => console.log("Now ya fucked up."))}
 
-    // this.setState({ roadsterspecs_speed_mph: response.data }));
-  }
+  componentDidMount() {  
+    axios
+    .get('/v2/info/falcon1').then(response =>{this.setState({rocketspec2: response.data}, console.log(response.data))})
+    .catch(err => console.log("Now ya fucked up."))}
+
+  // componentDidMount() {
+  //   axios
+  //   .get('/v2/info/falcon9').then(response =>{this.setState({rocketspec3: response.data}, console.log(response.data))})
+  //   .catch(err => console.log("Now ya fucked up."))}
+
+  //   componentDidMount() {
+  //   axios
+  //   .get('/v2/info/falconheavy').then(response =>{this.setState({rocketspec4: response.data}, console.log(response.data))})
+  //   .catch(err => console.log("Now ya fucked up."))}
+
+  //   componentDidMount() {
+  //   axios
+  //   .get('/v2/info/bfr').then(response =>{this.setState({rocketspec5: response.data}, console.log(response.data))})
+  //   .catch(err => console.log("You have fucked up now."))}
+
+    // fetch('https://api.spacexdata.com/v2/rockets/bfr')
+    //  .then(res => res.json()).then(rocketspec1 => this.setState({rocketspec1},
+    //     () => console.log("Fetched", rocketspec1)))
+
+    // fetch('/v2/rockets/bfr')
+    //   .then(res => res.json()).then(rocketspec1 => this.setState({rocketspec1},
+    //   () => console.log("Fetched", rocketspec1)))
+  
+
+
+// => "tobi"
 
   render() {
+    console.log(this.state.rocketspec1)
+    console.log(this.state.rocketspec2)
+    // console.log(this.state.rocketspec3)
+    // console.log(this.state.rocketspec4)
+    // console.log(this.state.rocketspec5)
+    // if(!this.state.rocketspec1) return<p>Loading...</p>
+    // let fuckoff2 = "Test me in the DOM and fuck off."
+    // var fuckoff = this.setState.helloworld = "Fuck Off World"
     return (
       <div className="App">
+      <p>{this.state.rocketspec1 && this.state.rocketspec1.name}</p>
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 roadsterout={this.state.roadsterspecs_speed_mph}/>
+        {this.state.helloworld}
+        <br/>
+    <p>{this.state.rocketspec2 && this.state.rocketspec2.name}</p>
+
+        {/* {this.state.rocketspec1} */}
+        <br/>
+    
+        {/* {this.props.fuckoff2} */}
+        {/* {fuckoff2} */}
+        {/* <div friendlymessage = {fuckoff2}/> */}
         </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
       </div>
     );
   }

@@ -55,7 +55,7 @@ axios
   module.exports = {
     getRoadsterspecs,
     getFalcon1specs,
-    // getFalcon9specs,
-    // getFalconHeavyspecs,
-    // getBfrspecs,
+    getFalcon9specs,
+    getFalconHeavyspecs,
+    getBfrspecs,
     };

@@ -2,6 +2,13 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import axios from 'axios';
 import './App.css';
+import './BFRData'
+import './Falcon1Data'
+import './Falcon9Data'
+import './FalconHeavyData'
+import './RoadsterData'
+
+
 
 class App extends Component {
   constructor(){
@@ -11,31 +18,33 @@ class App extends Component {
     roadsterspecs_speed_mph: [],
     rocketspec1: {},
     rocketspec2: {},
-    // rocketspec3: {},
-    // rocketspec4: {},
-    // rocketspec5: {}
+    rocketspec3: {},
+    rocketspec4: {},
+    rocketspec5: {}
     }
   }
-  
-// >>>TEST OUTPUT
+
   componentDidMount() {
     axios
     .get('/v2/info/roadster').then(response =>{this.setState({rocketspec1: response.data}, console.log(response.data))})
     .catch(err => console.log("Now ya fucked up."))}
 
-
+  componentDidMount() {
+    axios
+    .get('/v2/info/falcon1').then(response =>{this.setState({rocketspec3: response.data}, console.log(response.data))})
+    .catch(err => console.log("Now ya fucked up."))}
 
   componentDidMount() {
     axios
     .get('/v2/info/falcon9').then(response =>{this.setState({rocketspec3: response.data}, console.log(response.data))})
     .catch(err => console.log("Now ya fucked up."))}
 
-    componentDidMount() {
+  componentDidMount() {
     axios
     .get('/v2/info/falconheavy').then(response =>{this.setState({rocketspec4: response.data}, console.log(response.data))})
     .catch(err => console.log("Now ya fucked up."))}
 
-    componentDidMount() {
+  componentDidMount() {
     axios
     .get('/v2/info/bfr').then(response =>{this.setState({rocketspec5: response.data}, console.log(response.data))})
     .catch(err => console.log("You have fucked up now."))}

@@ -7,7 +7,7 @@ render() {
         
           <header>
           <link href= "HeaderStyle.css" rel="stylesheet"/>
-Blah blah blah look how pretty my header is. Blah blah blah.
+        SpaceX Cost Effectivness Data
           </header>
       )
     }

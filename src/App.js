@@ -20,15 +20,13 @@ export default class App extends Component {
     }
   }
 
-
-
   componentDidMount() {
     axios
     .get('/v2/info/bfr')//<<<GET TEST DATA
     .then(response =>{this.setState({testspecs: response.data}, console.log(response.data))})//<<<STATED TEST DATA
     .catch(err => console.log("You have fucked up now."))}//<<<ERROR TEST DATA
 
-
+  add
 
     render() {
     console.log(this.state.testspecs)//<<<CONSOLE TEST DATA
@@ -40,15 +38,13 @@ export default class App extends Component {
         <header className="App-header">
             <Header/>
              <br/>
-            <BFRData/>
-              <br/>
             <Falcon1Data/>
               <br/>
             <Falcon9Data/>
               <br/>
             <FalconHeavyData/>
               <br/>
-            <FalconHeavyData/>
+            <BFRData/>
               <br/>
             <RoadsterData/>
         </header>

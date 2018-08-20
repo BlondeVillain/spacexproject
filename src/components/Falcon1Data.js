@@ -10,12 +10,12 @@ export default class Falcon1Data extends Component {
       Units: ["$", "%","lb"]
       }
     }
-    
+
       componentDidMount() {
         axios
         .get('/v2/info/falcon1').then(response =>{this.setState({falcon1specs: response.data}, console.log(response.data))})
         .catch(err => console.log("Now ya fucked up."))}
-
+   
         render() {
 
           var descriptor = this.state.Vehiclename;

@@ -52,10 +52,18 @@ axios
       res.status(200).send(response.data)}
     );
     };
+    
+  // const add  = (req, res, next) => {
+  //   data.push(req.body);
+  //   res.status(200).send(data);
+  //   };
+    
   module.exports = {
     getRoadsterspecs,
     getFalcon1specs,
     getFalcon9specs,
     getFalconHeavyspecs,
     getBfrspecs,
+    // addSpecs,
+
     };

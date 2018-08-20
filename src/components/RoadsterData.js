@@ -12,8 +12,8 @@ export default class RoadsterData extends Component {
     }
         componentDidMount() {
         axios
-        .get('/v2/info/roadster').then(response =>{this.setState({roadsterspecs: response.data}, console.log(response.data))})
-        .catch(err => console.log("Now ya fucked up."))}
+        .get('https://api.spacexdata.com/v2/info/roadster').then(response =>{this.setState({roadsterspecs: response.data}, console.log(response.data))})
+        .catch(err => console.log("Waiting for Roadster signal..."))}
         render() {
 
           var descriptor = this.state.Vehiclename;

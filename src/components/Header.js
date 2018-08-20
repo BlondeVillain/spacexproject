@@ -6,7 +6,8 @@ render() {
       return (
         
           <header>
-Blah blah blah look how pretty my style sheet is. Blah blah blah.
+          <link href= "HeaderStyle.css" rel="stylesheet"/>
+Blah blah blah look how pretty my header is. Blah blah blah.
           </header>
       )
     }
